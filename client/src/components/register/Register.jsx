@@ -1,34 +1,38 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/Register.css"
+import { useForm } from "../../hooks/useForm";
+import { useRegister } from "../../hooks/useAuth";
+const initialValues = {
+    email: "",
+    password: "",
+    "confirm-password": "",
+  };
 
 export default function Register() {
-    const [values, setValues] = useState({
-      email: '',
-      password: '',
-      'confirm-password': '',
-    });
+    const [error, setError] = useState("");
+    const register = useRegister();
+    const navigate = useNavigate();
+    const registerHandler = async (values) => {
+      if (values.password !== values["confirm-password"]) {
+        setError("Passwords mismatch");
+        return;
+      }
+      try {
+        await register(values.email, values.password);
   
-    const [error, setError] = useState('');
-  
-    const changeHandler = (e) => {
-      setValues({
-        ...values,
-        [e.target.name]: e.target.value,
-      });
-    };
-  
-    const submitHandler = (e) => {
-      e.preventDefault();
-      // Add your registration logic here
-      // Example: Check if passwords match, etc.
-      if (values.password !== values['confirm-password']) {
-        setError('Passwords do not match.');
-      } else {
-        setError('');
-        // Proceed with registration
+        navigate("/");
+      } catch (err) {
+          setError(err.message)      
+        console.log(err.message);
       }
     };
+  
+    const { values, changeHandler, submitHandler } = useForm(
+      initialValues,
+      registerHandler
+    );
+  
   
     return (
       <section id="register-page" className="auth-section">

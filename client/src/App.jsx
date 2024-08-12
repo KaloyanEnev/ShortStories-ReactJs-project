@@ -9,6 +9,7 @@ import StoryDetails from "./components/story-details/StoryDetails";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import Logout from "./components/logout/Logout";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+
             <Route path="/register" element={<Register />} />
 
             <Route path="/stories" element={<StoryList />} />

@@ -9,6 +9,8 @@ const initialValues = {
   };
   
 export default function Login() {
+    const [error, setError] = useState("");
+
     const login = useLogin();
     const navigate = useNavigate();
     const loginHandler = async ({ email, password }) => {
@@ -18,6 +20,7 @@ export default function Login() {
   
         navigate("/");
       } catch (err) {
+        setError(err.message)
         console.log("no succ");
   
         console.log(err.message);
@@ -56,6 +59,9 @@ export default function Login() {
               onChange={changeHandler}
               className="input-field"
             />
+              {error && (
+              <p className="error-message">{error}</p>
+            )}
             <input type="submit" className="btn-submit" value="Login" />
             <p className="signup-link">
               <span>
