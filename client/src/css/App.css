@@ -1,0 +1,11 @@
+/* Ensure the body or a wrapper element uses flexbox */
+#box {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+  }
+  
+  #main-content {
+    flex: 1; /* Allows main content to grow and fill the available space */
+  }
+  
