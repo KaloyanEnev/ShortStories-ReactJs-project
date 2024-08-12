@@ -1,0 +1,15 @@
+.footer {
+    background-color: #333; /* Dark background similar to the navbar */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px 0; /* Increase top and bottom padding */
+    position: relative; /* Changed from fixed to relative */
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for a bit of separation */
+    flex: 1;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 16px; /* Slightly larger font size */
+  }

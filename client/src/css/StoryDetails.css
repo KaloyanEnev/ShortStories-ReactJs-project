@@ -1,0 +1,125 @@
+.story-details {
+    background-color: #f4f4f4; /* Light background for readability */
+    padding: 20px;
+    max-width: 800px; /* Set a max-width for better readability */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .info-section {
+    background-color: #fff; /* White background for content area */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .story-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .story-header h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .summary {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+  }
+  
+  .story-content {
+    margin-bottom: 20px;
+  }
+  
+  .details-comments {
+    margin-top: 20px;
+  }
+  
+  .details-comments h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .details-comments ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  .comment {
+    background-color: #fafafa; /* Light background for comments */
+    border: 1px solid #ddd; /* Border around each comment */
+    border-radius: 8px; /* Rounded corners for the comment boxes */
+    padding: 15px; /* Spacing inside the comment box */
+    margin-bottom: 10px; /* Space between comments */
+  }
+  
+  .comment p {
+    margin: 0;
+    line-height: 1.5; /* Improve readability */
+  }
+  
+  .comment .email {
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between email and comment text */
+    color: #333; /* Darker color for email */
+  }
+  
+  .comment .text {
+    color: #555; /* Slightly lighter color for comment text */
+  }
+  
+  .no-comment {
+    color: #999;
+  }
+  
+  .add-comment {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .add-comment h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .add-comment form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-comment textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .add-comment .btn.submit {
+    align-self: flex-end;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-comment .btn.submit:hover {
+    background-color: #0056b3;
+  }
+  
