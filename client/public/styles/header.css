@@ -1,0 +1,53 @@
+header {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+    width: 100%;
+  }
+  
+  /* Style for the navigation bar */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Style for links */
+  nav a {
+    color: white;
+    padding: 10px 15px;
+    text-transform: uppercase;
+  }
+  
+  nav a:hover {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  /* Styles for user and guest sections */
+  #user, #guest {
+    display: flex;
+  }
+  
+  #user a, #guest a {
+    margin-left: 10px;
+  }
+  
+  /* Styles for the header title */
+  header h1 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header h1 a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  header h1 a:hover {
+    color: #ddd;
+  }

@@ -1,0 +1,47 @@
+/* HomePage.css */
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh; /* Ensure it takes up at least the full height of the viewport */
+  }
+  
+  .intro {
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  .intro h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  .intro p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .catalog-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .catalog-link:hover {
+    background-color: #0056b3;
+  }
+  
+  
