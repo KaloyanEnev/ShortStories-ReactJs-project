@@ -1,57 +1,56 @@
 import React, { useState } from 'react';
 import '../../css/StoryDetails.css'; // Import the CSS file for styling
+import { useParams } from 'react-router-dom';
+import { useGetOneStories } from '../../hooks/useStories';
+import { useCreateComment, useGetAllComments } from '../../hooks/useComments';
+import { useForm } from '../../hooks/useForm';
+import { useAuthContext } from '../../contexts/AuthContext';
+const initialValues = {
+  comment: "",
+};
 
 export default function StoryDetails() {
-    const [comments, setComments] = useState([
+  const {email:authEmail} = useAuthContext();
+  const {storyId} = useParams();
+  const [story,setStory] = useGetOneStories(storyId);
+  
+  const [comments,setComments] = useGetAllComments(storyId);
+  const createComment = useCreateComment();
+  const { values, changeHandler, submitHandler } = useForm(
+    initialValues,
+   async ({ comment }) => {
+    try{
+    const newComment =  await createComment(storyId, comment);
+    setComments(oldComments => [ ...oldComments,newComment])
+
+    }
+    catch(err){
+      console.log(err.message);
       
-    ]);
-    const [newComment, setNewComment] = useState('');
+    }
+    }
+  );
   
-    const handleCommentChange = (e) => {
-      setNewComment(e.target.value);
-    };
-  
-    const handleCommentSubmit = (e) => {
-      e.preventDefault();
-      if (newComment.trim()) {
-        const newCommentObj = {
-          id: comments.length + 1, // Simple ID generation
-          author: { email: 'newuser@example.com' }, // Placeholder email
-          text: newComment
-        };
-        setComments([...comments, newCommentObj]);
-        setNewComment('');
-      }
-    };
-  
-    const story = {
-      title: 'Story Title',
-      imageUrl: 'https://via.placeholder.com/150', // Placeholder image
-      summary: 'This is a brief summary of the story. It provides an overview of the plot, main characters, and the setting.',
-      content: 'This is the main content of the story. It includes all the chapters or sections.'
-    };
-  
+    
     return (
       <section className="story-details">
         <div className="info-section">
           <div className="story-header">
             <img className="story-img" src={story.imageUrl} alt={story.title} />
             <h1>{story.title}</h1>
+            <h2>Genre: {story.genre}</h2>
           </div>
   
-          <p className="summary">{story.summary}</p>
+          <p className="summary">{story.text}</p>
   
-          <div className="story-content">
-            <h2>Content:</h2>
-            <p>{story.content}</p>
-          </div>
+          
   
           <div className="details-comments">
             <h2>Comments:</h2>
             <ul>
               {comments.map(comment => (
-                <li key={comment.id} className="comment">
-                  <p><strong>{comment.author.email}:</strong> {comment.text}</p>
+                <li key={comment._id} className="comment">
+                  <p><strong>{comment.author ? comment.author.email : authEmail}:</strong> {comment.text}</p>
                 </li>
               ))}
             </ul>
@@ -60,13 +59,14 @@ export default function StoryDetails() {
   
           <div className="add-comment">
             <h2>Add a Comment:</h2>
-            <form onSubmit={handleCommentSubmit}>
+            <form onSubmit={submitHandler}>
               <textarea
-                value={newComment}
-                onChange={handleCommentChange}
+              name='comment'
+                onChange={changeHandler}
+                value={values.comment}
                 placeholder="Write your comment here..."
               />
-              <button type="submit" className="btn submit">Submit</button>
+              <input type="submit" className="btn submit" value="add comment"/>
             </form>
           </div>
         </div>
