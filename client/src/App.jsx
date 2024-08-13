@@ -13,6 +13,7 @@ import Logout from "./components/logout/Logout";
 import CreateStory from "./components/story-create/StoryCreate";
 import MyStories from "./components/my-stories/MyStories";
 import StoryEdit from "./components/story-edit/StoryEdit";
+import PrivateGuard from "./components/common/PrivateGuard";
 
 function App() {
   return (
@@ -24,14 +25,15 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
 
             <Route path="/register" element={<Register />} />
-
-            <Route path="/stories" element={<StoryList />} />
-            <Route path="/mystories" element={<MyStories/>} />
+            <Route element={<PrivateGuard/>}>
+            <Route path="/logout" element={<Logout />} />
             <Route path="/stories/create" element={<CreateStory/>}/>
+            <Route path="/mystories" element={<MyStories/>} />
             <Route path="/stories/:storyId/edit" element={<StoryEdit/>}/>
+            </Route>
+            <Route path="/stories" element={<StoryList />} />
 
             <Route
               path="/stories/:storyId/details"
