@@ -36,3 +36,4 @@
 ## 6. Ui implementation
 - [x] Create game
   - [x]  create game hook
+- [x] added edit and delete button  

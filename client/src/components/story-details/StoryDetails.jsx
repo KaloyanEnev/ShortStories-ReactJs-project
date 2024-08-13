@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../css/StoryDetails.css'; // Import the CSS file for styling
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useGetOneStories } from '../../hooks/useStories';
 import { useCreateComment, useGetAllComments } from '../../hooks/useComments';
 import { useForm } from '../../hooks/useForm';
@@ -10,9 +10,10 @@ const initialValues = {
 };
 
 export default function StoryDetails() {
-  const {email:authEmail} = useAuthContext();
+  const {userId,email:authEmail} = useAuthContext();
   const {storyId} = useParams();
   const [story,setStory] = useGetOneStories(storyId);
+  const ownerId = story._ownerId;
   
   const [comments,setComments] = useGetAllComments(storyId);
   const createComment = useCreateComment();
@@ -30,6 +31,9 @@ export default function StoryDetails() {
     }
     }
   );
+  const storyDeleteHandler = () => {
+    return 'a'
+  }
   
     
     return (
@@ -56,6 +60,16 @@ export default function StoryDetails() {
             </ul>
             {comments.length === 0 && <p className="no-comment">No comments.</p>}
           </div>
+          {userId === ownerId && (
+          <div className="buttons">
+            <Link to={`/stories/${storyId}/edit`} className="button">
+              Edit
+            </Link>
+            <a href="#" onClick={storyDeleteHandler} className="button">
+              Delete
+            </a>
+          </div>
+        )}
   
           <div className="add-comment">
             <h2>Add a Comment:</h2>
