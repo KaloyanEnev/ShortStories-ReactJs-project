@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import '../../css/StoryDetails.css'; // Import the CSS file for styling
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useGetOneStories } from '../../hooks/useStories';
 import { useCreateComment, useGetAllComments } from '../../hooks/useComments';
 import { useForm } from '../../hooks/useForm';
 import { useAuthContext } from '../../contexts/AuthContext';
+import storiesAPI from '../../api/stories-api';
 const initialValues = {
   comment: "",
 };
@@ -14,6 +15,7 @@ export default function StoryDetails() {
   const {storyId} = useParams();
   const [story,setStory] = useGetOneStories(storyId);
   const ownerId = story._ownerId;
+  const navigate = useNavigate();
   
   const [comments,setComments] = useGetAllComments(storyId);
   const createComment = useCreateComment();
@@ -31,9 +33,17 @@ export default function StoryDetails() {
     }
     }
   );
-  const storyDeleteHandler = () => {
-    return 'a'
+  const storyDeleteHandler =async () =>{
+    try{
+
+      await storiesAPI.remove(storyId)
+      navigate('/stories')
+    }catch(err){
+      console.log(err);
+      
+    }
   }
+
   
     
     return (
