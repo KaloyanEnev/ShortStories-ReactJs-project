@@ -28,3 +28,12 @@ export function useGetOneStories(storyId){
         }, [storyId]);
         return[story,setStory]
   }
+  export function useCreateStory(){
+    const storyCreateHandler = async (storyData) => await storiesAPI.create(storyData)
+    
+    
+    
+    
+    
+    return storyCreateHandler
+    }
