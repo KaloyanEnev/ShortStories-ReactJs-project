@@ -12,6 +12,7 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 import Logout from "./components/logout/Logout";
 import CreateStory from "./components/story-create/StoryCreate";
 import MyStories from "./components/my-stories/MyStories";
+import StoryEdit from "./components/story-edit/StoryEdit";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
             <Route path="/stories" element={<StoryList />} />
             <Route path="/mystories" element={<MyStories/>} />
             <Route path="/stories/create" element={<CreateStory/>}/>
+            <Route path="/stories/:storyId/edit" element={<StoryEdit/>}/>
+
             <Route
               path="/stories/:storyId/details"
               element={<StoryDetails />}
