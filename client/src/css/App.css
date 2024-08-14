@@ -7,5 +7,6 @@
   
   #main-content {
     flex: 1; /* Allows main content to grow and fill the available space */
+    background-color: #e0e0e0;
   }
   

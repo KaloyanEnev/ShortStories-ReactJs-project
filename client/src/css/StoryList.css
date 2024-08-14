@@ -1,8 +1,9 @@
 #catalog-page {
   padding: 40px;
-  background-color: #f8f9fa;
+  background-color:#e0e0e0;
   display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 

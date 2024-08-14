@@ -15,7 +15,7 @@ export default function MyStories() {
   return (
     <section id="catalog-page">
       <div className="story-container">
-        <h1>All Stories</h1>
+        <h1>My Stories</h1>
         <div className="story-grid">
           {myStories.length > 0 ? 
             myStories.map(story => <StoryListItem key={story._id} {...story} />)
