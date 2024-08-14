@@ -6,6 +6,7 @@ import { useCreateComment, useGetAllComments } from '../../hooks/useComments';
 import { useForm } from '../../hooks/useForm';
 import { useAuthContext } from '../../contexts/AuthContext';
 import storiesAPI from '../../api/stories-api';
+import ConfirmationModal from '../conformation-modal/ConformationModal';
 const initialValues = {
   comment: "",
 };
@@ -19,6 +20,8 @@ export default function StoryDetails() {
   
   const [comments,setComments] = useGetAllComments(storyId);
   const createComment = useCreateComment();
+  const [showModal, setShowModal] = useState(false);
+  const confirmDeleteMessage = `Are you sure you want to delete ${story.title} story?`
   const { values, changeHandler, submitHandler } = useForm(
     initialValues,
    async ({ comment }) => {
@@ -73,7 +76,7 @@ export default function StoryDetails() {
         {userId === ownerId && (
           <div className="buttons">
             <Link to={`/stories/${storyId}/edit`} className="button">Edit</Link>
-            <a href="#" onClick={storyDeleteHandler} className="button">Delete</a>
+            <a href="#" onClick={() => setShowModal(true)} className="button">Delete</a>
           </div>
         )}
         {userId && (
@@ -91,6 +94,13 @@ export default function StoryDetails() {
           </div>
         )}
       </div>
+      {showModal && (
+        <ConfirmationModal
+          message={confirmDeleteMessage}
+          onConfirm={storyDeleteHandler}
+          onCancel={() => setShowModal(false)}
+        />
+      )}
     </section>
   );
   }
