@@ -2,19 +2,19 @@
 
 .home-page {
     display: flex;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     flex-direction: column;
     padding: 40px;
-    background-color: #e0e0e0;
+    background-color: #5b5656;
     color: #333;
     min-height: 100vh; 
   }
   
   .intro {
-    max-width: 800px;
+    max-width: 500px;
     text-align: center;
-    background-color:#ffffff;
+    background-color:#f5f5dc;
   }
   
   .intro h1 {
@@ -30,6 +30,7 @@
   }
   
   .catalog-link {
+    margin-top: 30px;
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -38,7 +39,7 @@
     background-color: #007bff;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease; 
   }
   
   .catalog-link:hover {

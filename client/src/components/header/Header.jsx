@@ -8,6 +8,7 @@ export default function Header() {
     return (
       <header>
         <h1>
+            <img src="/public/picture/image.png" alt="Logo" className="logo" /> 
           <Link to="/">
             ShortStories
           </Link>

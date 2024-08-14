@@ -1,22 +1,22 @@
 #catalog-page {
   padding: 40px;
-  background-color:#e0e0e0;
+  background-color:#5b5656;
   display: flex;
   justify-content: center;
   align-items: flex-start; 
   min-height: 100vh;
 }
-
+/* #e0e0e0 color for background old*/
 .story-container {
   max-width: 400px; /* Set a max-width for better readability */
   width: 100%;
-  background-color: #ffffff;
+  background-color:#f5f5dc;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
+/* #ffffff old story container color also for homepage where text is*/
 .story-grid {
   display: flex;
   flex-wrap: wrap; /* Allows items to wrap to the next line */

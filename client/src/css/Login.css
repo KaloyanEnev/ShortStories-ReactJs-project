@@ -3,11 +3,16 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color:  #e0e0e0; 
+  background-color:  #5b5656;
+  
 }
-
+/*
+ justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color:  #5b5656; */
 #login-form {
-  background-color: #ffffff; 
+  background-color: #f5f5dc; 
   border: 1px solid #ddd; 
   border-radius: 8px;
   padding: 20px;

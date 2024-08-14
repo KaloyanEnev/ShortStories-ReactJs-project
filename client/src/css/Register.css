@@ -3,11 +3,11 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:#e0e0e0; /* Light grey background for the entire page */
+    background-color:#5b5656; /* Light grey background for the entire page */
   }
   
   #register {
-    background-color: #ffffff; /* White background for the form */
+    background-color: #f5f5dc; /* White background for the form */
     border: 1px solid #ddd; /* Light grey border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px;
