@@ -1,4 +1,4 @@
-/* HomePage.css */
+
 
 .home-page {
     display: flex;
@@ -8,7 +8,7 @@
     padding: 40px;
     background-color: #e0e0e0;
     color: #333;
-    min-height: 100vh; /* Ensure it takes up at least the full height of the viewport */
+    min-height: 100vh; 
   }
   
   .intro {

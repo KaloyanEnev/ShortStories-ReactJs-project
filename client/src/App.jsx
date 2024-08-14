@@ -14,6 +14,7 @@ import CreateStory from "./components/story-create/StoryCreate";
 import MyStories from "./components/my-stories/MyStories";
 import StoryEdit from "./components/story-edit/StoryEdit";
 import PrivateGuard from "./components/common/PrivateGuard";
+import PrivateGuardForLoggedIn from "./components/common/PrivateGuardForLoggedIn";
 
 function App() {
   return (
@@ -24,9 +25,11 @@ function App() {
         <main id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route element={<PrivateGuardForLoggedIn/>}>
             <Route path="/login" element={<Login />} />
-
             <Route path="/register" element={<Register />} />
+            </Route>
+
             <Route element={<PrivateGuard/>}>
             <Route path="/logout" element={<Logout />} />
             <Route path="/stories/create" element={<CreateStory/>}/>

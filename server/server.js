@@ -1366,7 +1366,7 @@
           "713fe766-f8bd-49d2-afdc-1490e697b35a" : {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "The Lost Toy",
-                genre : "Sad story",
+                genre : "Horror",
                 text: "In a quiet park, a small, tattered bear lay abandoned beneath an old oak tree. Once cherished, it now watched the world pass by, its button eyes filled with longing. As days turned into nights, the bear hoped someone would notice its worn smile and take it home to be loved again.",
                 imageUrl: "https://media.istockphoto.com/id/537845194/photo/teddy-bear-lies-on-the-road.jpg?s=612x612&w=0&k=20&c=apTMAd1S-YYaKu5lvQCBES1OBme-7B-DOBFppzMKjd8=",
                 "_createdOn": 1723496515475,
@@ -1375,7 +1375,7 @@
           "18b47aa2-4359-436d-8ef6-1c032aa1e13d":  {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
                 title: "The Last Train",
-                genre : "Adventure",
+                genre : "Fantasy",
                 text: "The station was empty, except for an old man clutching a faded ticket. The last train approached, its whistle echoing in the night. He stepped aboard, memories flooding back of journeys taken long ago. As the train pulled away, the station vanished, and he smiled, ready for one final adventure.",
                 imageUrl: "https://img.freepik.com/premium-photo/train-dark-station-with-lights_759095-28520.jpg",
                 _createdOn: 1723496746252,

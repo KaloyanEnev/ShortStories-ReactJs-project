@@ -3,7 +3,7 @@
   background-color:#e0e0e0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; 
   min-height: 100vh;
 }
 
