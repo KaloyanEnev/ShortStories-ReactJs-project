@@ -1,75 +1,81 @@
 #catalog-page {
-    padding: 40px;
-    background-color: #f8f9fa; /* Light background color for the section */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    min-height: 100vh;
-  }
-  
-  /* Container for the stories */
-  .story-container {
-    max-width: 800px; /* Reduced max width for a more compact layout */
-    width: 100%; /* Full width of the container */
-    background-color: #ffffff; /* White background for the container */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    min-height: 200px; 
-  }
-  
-  /* Stack story items vertically */
-  .story-list {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px; /* Reduced space between items */
-  }
-  
-  /* Individual story item styling */
-  .story-item {
-    background-color: #ffffff; /* White background for story items */
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Ensure content does not overflow the border radius */
-    padding: 10px; /* Reduced padding inside the item */
-    display: flex;
-    flex-direction: column; /* Stack content vertically inside each item */
-    align-items: flex-start; /* Align items to the start for a consistent look */
-  }
-  
-  .story-info img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .story-info h6 {
-    font-size: 12px; /* Smaller font size */
-    color: #666;
-    margin: 0;
-  }
-  
-  .story-info h2 {
-    font-size: 16px; /* Smaller font size */
-    color: #333;
-    margin: 10px 0;
-  }
-  
-  .details-button {
-    display: inline-block;
-    padding: 6px 12px; /* Smaller padding */
-    font-size: 12px; /* Smaller font size */
-    color: #fff;
-    background-color: #007bff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-    margin-top: 10px; /* Space between text and button */
-  }
-  
-  .details-button:hover {
-    background-color: #0056b3;
+  padding: 40px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
 
+.story-container {
+  max-width: 400px; /* Set a max-width for better readability */
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  }
+.story-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  gap: 20px; /* Space between items */
+}
+
+.story-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex: 1 1 calc(50% - 20px); /* Adjust item width for a 2-column layout with gap consideration */
+}
+
+.story-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.story-info {
+  flex-grow: 1;
+}
+
+.story-info h2 {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.story-info h6 {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+.details-button {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #007bff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.details-button:hover {
+  background-color: #0056b3;
+}
+
+.no-articles {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}

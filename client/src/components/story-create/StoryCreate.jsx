@@ -9,6 +9,17 @@ const initialValues = {
   text: "",
   imageUrl: "",
 };
+const validateStoryForm = (values) => {
+    const errors = {};
+    if (!values.title) errors.title = "Title is required";
+    if (!values.genre) errors.genre = "Please select a genre";
+    if (!values.text) errors.text = "Story text cannot be empty";
+    const urlPattern = /^https?:\/\//i;
+    if (!values.imageUrl || !urlPattern.test(values.imageUrl)) {
+      errors.imageUrl = "Please enter a valid URL";
+    }
+    return errors;
+  };
 export default function CreateStory() {
   const createStory = useCreateStory();
   const navigate = useNavigate();
@@ -23,9 +34,10 @@ export default function CreateStory() {
       console.error(err.message);
     }
   };
-  const { values, changeHandler, submitHandler } = useForm(
+  const { values, errors, changeHandler, submitHandler } = useForm(
     initialValues,
-    createHandler
+    createHandler,
+    validateStoryForm
   );
 
   return (
@@ -43,6 +55,7 @@ export default function CreateStory() {
             onChange={changeHandler}
             placeholder="Enter story title..."
           />
+          {errors.title && <p className="error">{errors.title}</p>}
 
 <label htmlFor="genre">Genre:</label>
           <select
@@ -59,8 +72,9 @@ export default function CreateStory() {
             <option value="Horror">Horror</option>
             <option value="Thriller">Thriller</option>
             <option value="Non-fiction">Non-fiction</option>
-            {/* Add more genres as needed */}
+           
           </select>
+          {errors.genre && <p className="error">{errors.genre}</p>}
           <label htmlFor="story-text">Text:</label>
           <textarea
             id="text"
@@ -69,7 +83,7 @@ export default function CreateStory() {
             onChange={changeHandler}
             placeholder="Write your story here..."
           ></textarea>
-
+        {errors.text && <p className="error">{errors.text}</p>}
           <label htmlFor="story-img">Image URL:</label>
           <input
             type="text"
@@ -79,7 +93,7 @@ export default function CreateStory() {
             onChange={changeHandler}
             placeholder="Enter image URL..."
           />
-
+           {errors.imageUrl && <p className="error">{errors.imageUrl}</p>}
           <input className="btn submit" type="submit" value="Create Story" />
         </div>
       </form>

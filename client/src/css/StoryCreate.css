@@ -9,6 +9,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    
   }
   
   .container h1 {
@@ -40,4 +41,11 @@
   
   .container .btn.submit:hover {
     background-color: #0056b3;
+  }
+  .error {
+    color: #ff4d4f; /* Red color to indicate error */
+    font-size: 0.9em; /* Slightly smaller font size */
+    margin-top: 5px; /* Space between input field and error message */
+    margin-bottom: 10px; /* Space below the error message */
+    display: block; /* Ensure error messages are displayed as block elements */
   }

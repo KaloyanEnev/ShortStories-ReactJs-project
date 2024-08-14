@@ -48,52 +48,49 @@ export default function StoryDetails() {
     
     return (
       <section className="story-details">
-        <div className="info-section">
-          <div className="story-header">
-            <img className="story-img" src={story.imageUrl} alt={story.title} />
+      <div className="info-section">
+        <div className="story-header">
+          <img className="story-img" src={story.imageUrl} alt={story.title} />
+          <div className="story-info">
             <h1>{story.title}</h1>
-            <h2>Genre: {story.genre}</h2>
+            <h2 className="genre">Genre: {story.genre}</h2>
           </div>
-  
-          <p className="summary">{story.text}</p>
-  
-          
-  
-          <div className="details-comments">
-            <h2>Comments:</h2>
-            <ul>
-              {comments.map(comment => (
-                <li key={comment._id} className="comment">
-                  <p><strong>{comment.author ? comment.author.email : authEmail}:</strong> {comment.text}</p>
-                </li>
-              ))}
-            </ul>
-            {comments.length === 0 && <p className="no-comment">No comments.</p>}
-          </div>
-          {userId === ownerId && (
+        </div>
+        <p className="summary">{story.text}</p>
+        <div className="details-comments">
+          <h2>Comments:</h2>
+          <ul>
+            {comments.map((comment) => (
+              <li key={comment._id} className="comment">
+                <p>
+                  <strong>{comment.author ? comment.author.email : authEmail}:</strong> {comment.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+          {comments.length === 0 && <p className="no-comment">No comments.</p>}
+        </div>
+        {userId === ownerId && (
           <div className="buttons">
-            <Link to={`/stories/${storyId}/edit`} className="button">
-              Edit
-            </Link>
-            <a href="#" onClick={storyDeleteHandler} className="button">
-              Delete
-            </a>
+            <Link to={`/stories/${storyId}/edit`} className="button">Edit</Link>
+            <a href="#" onClick={storyDeleteHandler} className="button">Delete</a>
           </div>
         )}
-  
+        {userId && (
           <div className="add-comment">
             <h2>Add a Comment:</h2>
             <form onSubmit={submitHandler}>
               <textarea
-              name='comment'
+                name='comment'
                 onChange={changeHandler}
                 value={values.comment}
                 placeholder="Write your comment here..."
               />
-              <input type="submit" className="btn submit" value="add comment"/>
+              <input type="submit" className="btn submit" value="Add Comment" />
             </form>
           </div>
-        </div>
-      </section>
-    );
+        )}
+      </div>
+    </section>
+  );
   }
