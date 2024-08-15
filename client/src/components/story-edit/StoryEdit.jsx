@@ -13,12 +13,12 @@ const initialValues = {
 };
 const validateStoryForm = (values) => {
   const errors = {};
-  if (!values.title) errors.title = "Title is required";
-  if (!values.genre) errors.genre = "Please select a genre";
-  if (!values.text) errors.text = "Story text cannot be empty";
+  if (!values.title) errors.title = "Title is required!";
+  if (!values.genre) errors.genre = "Please select a genre!";
+  if (!values.text) errors.text = "Story text cannot be empty!";
   const urlPattern = /^https?:\/\//i;
   if (!values.imageUrl || !urlPattern.test(values.imageUrl)) {
-    errors.imageUrl = "Please enter a valid URL";
+    errors.imageUrl = "Please enter a valid URL!";
   }
   return errors;
 };
