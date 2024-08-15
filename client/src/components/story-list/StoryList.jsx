@@ -11,7 +11,7 @@ export default function StoryList() {
    
     const [stories,setStories] = useGetAllStories();
     
-  // Using dummy data for the example
+  
 
   return (
     <section id="catalog-page">

@@ -8,7 +8,7 @@
 }
 /* #e0e0e0 color for background old*/
 .story-container {
-  max-width: 400px; /* Set a max-width for better readability */
+  max-width: 400px; 
   width: 100%;
   background-color:#f5f5dc;
   border: 1px solid #ddd;
@@ -19,8 +19,8 @@
 /* #ffffff old story container color also for homepage where text is*/
 .story-grid {
   display: flex;
-  flex-wrap: wrap; /* Allows items to wrap to the next line */
-  gap: 20px; /* Space between items */
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .story-item {
@@ -32,19 +32,22 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  flex: 1 1 calc(50% - 20px); /* Adjust item width for a 2-column layout with gap consideration */
+  flex: 1 1 calc(50% - 20px); 
 }
 
-.story-info img {
+ img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 .story-info {
-  flex-grow: 1;
+  display: flex; /* Make story-info a flex container */
+  flex-direction: row; /* Arrange elements horizontally */
+  align-items: center; /* Vertically align content within the row */
+  flex-grow: 1; 
 }
 
 .story-info h2 {

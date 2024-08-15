@@ -55,7 +55,7 @@ export default function StoryDetails() {
         <div className="story-header">
           <img className="story-img" src={story.imageUrl} alt={story.title} />
           <div className="story-info">
-            <h1>{story.title}</h1>
+            <h1>Title: {story.title}</h1>
             <h2 className="genre">Genre: {story.genre}</h2>
           </div>
         </div>
