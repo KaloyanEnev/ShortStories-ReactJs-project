@@ -21,17 +21,17 @@ export default function StoryDetails() {
   const [comments,setComments] = useGetAllComments(storyId);
   const createComment = useCreateComment();
   const [showModal, setShowModal] = useState(false);
-  const [errorMsg, setErrorMsg] = useState({});
+  const [errorMsg, setErrorMsg] = useState(null);
   const confirmDeleteMessage = `Are you sure you want to delete ${story.title} story?`
   const { values, changeHandler, submitHandler } = useForm(
     initialValues,
    async ({ comment }) => {
     if (!comment.trim()) {
-      setErrorMsg({ message: 'Comment cannot be empty' });
+      setErrorMsg({ message: 'Comment cannot be empty!' });
       return; 
     }
     try{
-      setErrorMsg({})
+      setErrorMsg(null)
     const newComment =  await createComment(storyId, comment);
     setComments(oldComments => [ ...oldComments,newComment])
 
@@ -85,7 +85,7 @@ export default function StoryDetails() {
             <a href="#" onClick={() => setShowModal(true)} className="button">Delete</a>
           </div>
         )}
-              {errorMsg && <p className="error-message">{errorMsg.message}</p>}
+              {errorMsg && <p className="errorText">{errorMsg.message}</p>}
         {userId && (
           <div className="add-comment">
             <h2>Add a Comment:</h2>

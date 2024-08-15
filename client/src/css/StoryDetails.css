@@ -157,4 +157,8 @@
 .buttons .button:hover {
   background-color: #0056b3;
 }
-
+.errorText {
+  color: red;
+  font-size: 20px;
+  margin-top: 10px;
+}
