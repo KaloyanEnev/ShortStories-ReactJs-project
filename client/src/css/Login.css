@@ -12,6 +12,7 @@
   min-height: 100vh;
   background-color:  #5b5656; */
 #login-form {
+  margin-bottom: 290px;
   background-color: #f5f5dc; 
   border: 1px solid #ddd; 
   border-radius: 8px;

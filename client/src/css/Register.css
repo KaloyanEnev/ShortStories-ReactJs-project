@@ -3,18 +3,19 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color:#5b5656; /* Light grey background for the entire page */
+    background-color:#5b5656; 
   }
-  
+  /* remove margin-bottom if sth breaks*/
   #register {
-    background-color: #f5f5dc; /* White background for the form */
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 215px;
+    background-color: #f5f5dc;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     max-width: 400px;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in width calculation */
+    box-sizing: border-box; 
   }
   
   .form-container {
@@ -29,7 +30,7 @@
   
   h1 {
     text-align: center;
-    color: #333; /* Darker color for the heading */
+    color: #333; 
     margin-bottom: 20px;
   }
   
@@ -37,33 +38,32 @@
     font-size: 15px;
     color: #0d0d0d;
     margin-bottom: 5px;
-    display: block; /* Ensure labels appear above input fields */
+    display: block; 
   }
-  
   .input-field {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensure padding does not cause overflow */
+    box-sizing: border-box; 
   }
   
   .btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: #007bff; /* Primary button color */
+    background-color: #007bff; 
     color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    box-sizing: border-box; /* Ensure padding does not cause overflow */
+    box-sizing: border-box; 
   }
   
   .btn-submit:hover {
-    background-color: #0056b3; /* Darker button color on hover */
+    background-color: #0056b3;
   }
   
   .error-message {
